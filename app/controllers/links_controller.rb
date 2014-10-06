@@ -2,6 +2,7 @@ class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
   def shorten
+    #this takes on the role for show
     @li = Link.find_by_shorturl(params[:id])
   end
 
@@ -36,7 +37,7 @@ class LinksController < ApplicationController
     respond_to do |format|
       if @link.save
         format.html { redirect_to @link, notice: 'Link was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @link }
+        format.json { render action: 'shorten', status: :created, location: @link }
       else
         format.html { render action: 'new' }
         format.json { render json: @link.errors, status: :unprocessable_entity }
