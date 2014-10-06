@@ -26,32 +26,34 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
-
+#quick form creation
 gem 'simple_form'
 
+#bootstrap for simple design
 gem 'twitter-bootstrap-rails'
 
+#bootstrap dependancy
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 
+#to use attra_accesible
 gem "protected_attributes"
 
+#needed for the assets for heroku pipeline
 gem 'rails_12factor'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
-# Use ActiveModel has_secure_password
+# Use the hash function for random values
 gem 'bcrypt', '~> 3.1.7'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+#to access from dev and test, rspec tests
+gem 'rspec-rails', '~> 3.0.0'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :test do
+  gem 'launchy'          # a useful debugging aid for user stories
+  gem 'database_cleaner' # to clear Cucumber's test database between runs, only needed in testing
+  gem 'selenium-webdriver' #for js testing
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+end

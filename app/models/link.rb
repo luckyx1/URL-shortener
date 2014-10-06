@@ -19,12 +19,14 @@ class Link < ActiveRecord::Base
 	      else
 	      	resp = false
 	      end
-	      #try to see if you get a 200, its the most reliable to see if the url is valid
-	      begin
-	       @r = Net::HTTP.get_response(URI.parse(url))
-	   	  rescue
-	   	  	errors.add(:url,"This url does not point to anything valid")
-	      end
+	      #according to what is required, there are assume to be no invalid correct form urls, so accept them
+	      
+	      # #try to see if you get a 200, its the most reliable to see if the url is valid
+	      # begin
+	      #  @r = Net::HTTP.get_response(URI.parse(url))
+	   	  # rescue
+	   	  # 	errors.add(:url,"This url does not point to anything valid")
+	      # end
   		
 	    rescue URI::InvalidURIError
 	      resp = false
