@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @li.url %>
+</p>
+
+<p>
+  <strong>Shorturl:</strong>
+  <%= @li.shorturl %>
+</p>
+
+<%= link_to 'Edit', edit_link_path(@li) %> |
+<%= link_to 'Back', links_path %>

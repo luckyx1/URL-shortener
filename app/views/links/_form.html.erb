@@ -1,0 +1,15 @@
+<%= simple_form_for @link , :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.error_notification %>
+<div id="legend">
+	<legend>Lets shrink your Links!</legend>
+</div>
+<div class="container-fluid">
+	<div id="url_input">
+  		<%= f.input :url %>
+  	</div>
+  	<div id="url_button">
+  		<%= f.submit nil, :class => 'btn btn-primary' %>
+  		<%= link_to 'Cancel', links_path, :class => 'btn' %>
+  	</div>
+</div>
+<% end %>
