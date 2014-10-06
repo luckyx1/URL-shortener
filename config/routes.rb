@@ -6,7 +6,6 @@ UrlShort::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   get 'minify' => 'links#new', :as => 'minify'
-  get 'links/:id' => 'links#shorten'
   root 'links#new'
 
   # Example of regular route:

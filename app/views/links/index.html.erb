@@ -1,12 +1,11 @@
-<h1>Listing Your shorten links</h1>
+<h1>Go to you short link by typing links/(your shortlink here)</h1>
 
 <table>
   <thead>
     <tr>
       <th>ID</th>
       <th>Url</th>
-      <th>Shorturl</th>
-      <th></th>
+      <th>Copy this shortlink</th>
       <th></th>
       <th></th>
     </tr>
@@ -17,8 +16,7 @@
       <tr>
         <td><%= link_to link.id, link_path(link) %> </td>
         <td><%= link.url %></td>
-        <td><%= link.shorturl %></td>
-        <td><%= link_to 'Show', shorten_path(link) %></td>
+        <td><%= link_to link.shorturl,link_path(link) %></td>
         <td><%= link_to 'Edit', edit_link_path(link) %></td>
         <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
