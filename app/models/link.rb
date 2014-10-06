@@ -20,6 +20,8 @@ class Link < ActiveRecord::Base
 	      	resp = false
 	      end
 	      #according to what is required, there are assume to be no invalid correct form urls, so accept them
+	      #Todo: experiment with websites that give 200, but some websites deny source, so acceptable answer is
+	      #just shirt all formated urls
 	      
 	      # #try to see if you get a 200, its the most reliable to see if the url is valid
 	      # begin
@@ -33,7 +35,7 @@ class Link < ActiveRecord::Base
 	    end
 	    #urge users to formate url to fix their url
 	    errors.add(:url,"Please use the format: http://#{url} or https://#{url}") unless resp
-	     
+	    return resp 
 	end
 
 	def shrink 

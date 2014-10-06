@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe LinksController, type: :controller do
-  describe 'POST #create' do
+  describe '#create' do
+  	#using factories to make production faster
   	context 'when url is valid' do
 	    it 'renders the page with the shorturls' do
   		  post 'create' , link: {:url=>"https://test.com"} 
