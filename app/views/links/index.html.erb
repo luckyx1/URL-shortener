@@ -6,8 +6,8 @@
 <table class="table">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Url</th>
+      <th>Count</th>
+      <th>Inputed Url</th>
       <th>Copy this shortlink</th>
       <th>
         <i class="icon-trash"></i>
@@ -15,11 +15,11 @@
   </thead>
 
   <tbody>
-    <% @links.each do |link| %>
+    <% @links.each_with_index do |link,index| %>
       <tr>
-        <td><%= link_to link.id, link_path(link) %> </td>
+        <td><%= link_to index, link_path(link) %> </td>
         <td><%= link.url %></td>
-        <td><%= link_to link.shorturl,link_path(link) %></td>
+        <td><%= link_to "minifyurl.herokuapp.com/links/"+link.shorturl.to_s,link_path(link) %></td>
         <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

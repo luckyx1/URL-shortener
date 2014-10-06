@@ -13,23 +13,14 @@ class Link < ActiveRecord::Base
 	      #test first if the url is formatted right
 	      #this causes users to check their url before inserting
 	      uri = URI.parse(url)
+	      #this method passing without errors is a basic check to see
+	      #if url is valid
 	      resp = uri.kind_of?(URI::HTTP) || uri.kind_of?(URI::HTTPS)
 	      if url =~ /\A#{URI::regexp}\z/
 	      	resp = true
 	      else
 	      	resp = false
 	      end
-	      #according to what is required, there are assume to be no invalid correct form urls, so accept them
-	      #Todo: experiment with websites that give 200, but some websites deny source, so acceptable answer is
-	      #just shirt all formated urls
-	      
-	      # #try to see if you get a 200, its the most reliable to see if the url is valid
-	      # begin
-	      #  @r = Net::HTTP.get_response(URI.parse(url))
-	   	  # rescue
-	   	  # 	errors.add(:url,"This url does not point to anything valid")
-	      # end
-  		
 	    rescue URI::InvalidURIError
 	      resp = false
 	    end

@@ -11,6 +11,7 @@ class LinksController < ApplicationController
   # GET /links/1.json
   def show
     #this allows for the special redirect
+    #basicly, find the url accosited with the has, and redirect!
     @li = Link.find_by_shorturl(params[:id])
     redirect_to @li.url
   end
