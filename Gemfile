@@ -45,7 +45,7 @@ gem 'rails_12factor'
 gem 'bcrypt', '~> 3.1.7'
 
 #to access from dev and test, rspec tests
-gem 'rspec-rails', '~> 3.0.0'
+gem 'rspec-rails'
 
 
 group :test do

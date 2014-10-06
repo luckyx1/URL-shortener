@@ -1,17 +1,17 @@
 require 'spec_helper'
-require 'rails_helper'
 
-describe LinksController do
+describe LinksController, type: :controller do
   describe 'POST #create' do
-  	context 'when url is invalid' do
-	    it 'renders the page with error' do
-	      url = create(:link)
-
-	      post :create, session: { link: url.url}
-
-	      expect(response).to render_template(:index)
-	      expect(flash[:notice]).to match(/^ do not match/)
+  	context 'when url is valid' do
+	    it 'renders the page with the shorturls' do
+  		  post 'create' , link: {:url=>"https://test.com"} 
+	      expect(flash[:notice]).to match("Link was successfully created.")
 	    end
+	end
+	context 'when trying to create using invalid url' do
+		it 'renders the error' do
+			expect{create(:invalid_link)}.to raise_error
+		end
 	end
   end
 end

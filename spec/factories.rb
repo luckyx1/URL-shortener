@@ -8,7 +8,7 @@ FactoryGirl.define do
 	factory :link do |f|
 		f.sequence(:url) {|n| "https://#{n}.com"}
 	end
-	factory :invalid_link do |f|
+	factory :invalid_link, :class => Link  do |f|
 		f.sequence(:url) {|n| "#{n}.com"}
 	end
 end

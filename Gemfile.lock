@@ -203,7 +203,7 @@ DEPENDENCIES
   protected_attributes
   rails (= 4.0.4)
   rails_12factor
-  rspec-rails (~> 3.0.0)
+  rspec-rails
   sass-rails (~> 4.0.2)
   selenium-webdriver
   simple_form
