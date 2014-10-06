@@ -56,5 +56,4 @@ production:
   encoding: unicode
   database: urlShort_production
   pool: 5
-  username: Erick_laptop
-  password:
+  timeout: 5000
