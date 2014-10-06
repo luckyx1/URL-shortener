@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-UrlShort::Application.config.secret_key_base = 'f567dbb4bd86642c2a89d801a1d6479d7622b841cc7d4c708e341566a1f925f19001e41fc9bf388d1292a734f1f932f54875fbe4f42ee88aa95fe05704ed19ab'
+UrlShort::Application.config.secret_key_base = '5a0761f364f70a9d7874cd6a1575eb4e700fbd9c9547fc96f823572ce7661072b591a9a41ce0d5d4341570c4b3823b0384e7f16366616a0bd8f52d801ada21fd'
