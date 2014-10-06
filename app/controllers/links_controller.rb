@@ -1,11 +1,6 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
-  def shorten
-    #this takes on the role for show
-    @li = Link.find_by_shorturl(params[:id])
-  end
-
   # GET /links
   # GET /links.json
   def index
@@ -25,10 +20,6 @@ class LinksController < ApplicationController
     @link = Link.new
   end
 
-  # GET /links/1/edit
-  def edit
-  end
-
   # POST /links
   # POST /links.json
   def create
@@ -45,19 +36,6 @@ class LinksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /links/1
-  # PATCH/PUT /links/1.json
-  def update
-    respond_to do |format|
-      if @link.update(link_params)
-        format.html { redirect_to @link, notice: 'Link was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @link.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   # DELETE /links/1
   # DELETE /links/1.json

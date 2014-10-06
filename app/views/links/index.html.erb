@@ -1,12 +1,14 @@
-<h1>Go to you short link by typing links/(your shortlink here)</h1>
+<center>
+<h1>Go to you short link by typing
+<br> http://minifyurl.herokuapp.com/links/(Your shortlink)</h1>
+</center>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>ID</th>
       <th>Url</th>
       <th>Copy this shortlink</th>
-      <th></th>
       <th></th>
     </tr>
   </thead>
@@ -17,7 +19,6 @@
         <td><%= link_to link.id, link_path(link) %> </td>
         <td><%= link.url %></td>
         <td><%= link_to link.shorturl,link_path(link) %></td>
-        <td><%= link_to 'Edit', edit_link_path(link) %></td>
         <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
